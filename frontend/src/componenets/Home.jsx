@@ -39,26 +39,20 @@ import ads from '../images/adv.png'
 import Botomnavigate from './Buttomnavigation';
 import { Snackbar } from '@mui/material/Snackbar';
 import Notifications from './reusable/Notifications';
-import {io} from  'socket.io-client'
 import resourses from '../features/resouces';
 import axios from 'axios';
 
-var socket = io('http://68.183.246.197:4000');
 export default function Home() {
   let [showblance,setshowblance]=React.useState(true)
   let [user,setuser]=useContext(Usercontext)
   let [blance,setblance]=useState(user.finanaces.blance)
   let [activesubs,setactivesubs]=useState([])
-  socket.on('connect',()=>{
-    console.log('connecred ..')
-  })
-  socket.on('updateblance'+user.cus_id,(payload)=>{
-    console.log('from socket listening ',setblance(payload.newblance))  })
+
 
   let paymentmethods=user.finanaces.payment_methods
  useEffect(()=>{
   let getmysubs=async()=>{
-    let res= await axios.get('http://localhost:5500/subscriptions/getuseractivesubs/cus_MODqrCunyPyNgv')
+    let res= await axios.get('http://144.126.252.62:5500/subscriptions/getuseractivesubs/cus_MODqrCunyPyNgv')
     setactivesubs(res.data.subscriptions)
   }
 getmysubs()

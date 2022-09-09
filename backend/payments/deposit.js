@@ -6,7 +6,7 @@ const stripe = require('stripe')(stripetk)
 
 
 let chargeuser=async(data)=>{
-  let user=data.user.data.data.userka
+let user=data.user.data.data.userka
 let depositinfo=data.depositinfo
 let ammount=parseInt(depositinfo.ammount)
 let userka=await Users.findOne({email:user.email})
@@ -14,6 +14,7 @@ let prefiousammount=parseInt(userka.finanaces.blance)
 let prefiouspaymentmethods=userka.finanaces.payment_methods
 let newblance =prefiousammount+ammount
 
+console.log('macluumada ',data)
 console.log(typeof prefiousammount , typeof ammount)
 
 

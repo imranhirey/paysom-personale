@@ -21,8 +21,8 @@ let createtransaction=async(data)=>{
         trx_id:trx_id,
         time_stamp:datetime,
         amount:trx_info.ammounttosend,
-        from:trx_info.from_user.name,
-        to:trx_info.touser.name
+        from:trx_info.from_user.cus_id,
+        to:trx_info.touser.cus_id,
     }
     let transaction= new TransactionsSchema({
         trx_id:trx_obj.trx_id,

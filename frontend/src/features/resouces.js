@@ -12,7 +12,7 @@ export default class resourses {
   token = "";
   refreshtoken = "";
   http=axios.create({
-    baseURL:'http://localhost:4000'
+    baseURL:'http://144.126.252.62:4000'
   })
   login = async (data) => {
     //  call http end point
@@ -172,14 +172,14 @@ export default class resourses {
     
   }
   getsubscription=async(id)=>{
-   let res= axios.post('http://localhost:5500/subscriptions/get',{
+   let res= axios.post('http://144.126.252.62:5500/subscriptions/get',{
           sub_id:id
         })
     return res
       
   }
   startsubscribtion=async(data)=>{
-    let res= axios.post('http://localhost:5500/subscriptions/subscribe',{
+    let res= axios.post('http://144.126.252.62:5500/subscriptions/subscribe',{
            ...data
          })
      return res

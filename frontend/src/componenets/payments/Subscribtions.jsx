@@ -41,7 +41,7 @@ const Subscribtions = () => {
 
   let getsubprovider = async () => {
     axios
-      .post("http://localhost:5500/subscriptions/getsubowner", {
+      .post("http://144.126.252.62:5500/subscriptions/getsubowner", {
         sub_id: subid,
       })
       .then((res) => {
@@ -68,7 +68,7 @@ const Subscribtions = () => {
   }, []);
   useEffect(() => {
     axios
-      .post("http://localhost:5500/subscriptions/get", {
+      .post("http://144.126.252.62:5500/subscriptions/get", {
         sub_id: subid,
       })
       .then((res) => {
@@ -91,7 +91,7 @@ const Subscribtions = () => {
     Res.startsubscribtion(data).then((res) => {
       console.log(res);
      
-    window.location.replace('http://localhost:3000/subscribtions')
+    window.location.replace('http://144.126.252.62:3000/subscribtions')
     })
     .catch((err)=>{
       console.log(err)

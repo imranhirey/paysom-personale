@@ -3,6 +3,7 @@ const stripe = require('stripe')(stripetk)
 let Users=require('../database/schemas/regstrationSchema')
 
 let assignpaymentmethodtouser=async(data,user)=>{
+  console.log('assigning payment method to user',data)
 console.log('halkaan ayey shaqada ku darista ka bilaabanee ',data.id,user.cus_id)
    await stripe.customers.createSource(user.cus_id,{source:data.id})
   .then(async()=>{

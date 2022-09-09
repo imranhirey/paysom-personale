@@ -24,7 +24,7 @@ let navigate=useNavigate()
   console.log(intent)
   useEffect(()=>{
     let getpaymentintentinfo=async(id)=>{
-        let res=await axios.post('http://localhost:5500/intents/getintentinfo',{intentid:id});
+        let res=await axios.post('http://144.126.252.62:5500/intents/getintentinfo',{intentid:id});
         console.log('jhjhjh',res.data)
         setintent(res.data)
      

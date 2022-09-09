@@ -11,6 +11,7 @@ const stripe = require('stripe')(stripetk)
       respond:''
   
     }
+    console.log('creating card',data)
     let params={}
     params.card={
       number: data.cardnumber,

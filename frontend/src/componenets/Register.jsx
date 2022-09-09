@@ -82,7 +82,7 @@ export default function Register() {
                     let res = await Resourses.getverificationlink();
                     let link = res.link;
                     let p=9
-                    let resp= await axios.post('http://localhost:4000/register',{user:values})
+                    let resp= await axios.post('http://144.126.252.62:4000/register',{user:values})
                      console.log(resp.data.msg)
                     if (resp.data.msg==='sorry user with this email already exist'){
                      seterrormessage('sorry user with this email already exist')
